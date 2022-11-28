@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    min-width: 250px;
+}
+
+.fundo-topo {
+    background: url('img/FundoTopo.jpg');
+}
+
+.bg-main {
+    background-color: black;
+}
