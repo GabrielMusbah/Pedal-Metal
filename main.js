@@ -1,11 +1,11 @@
 $(document).ready(function(){
     let bikes = [
-        {name: 'ENDUREX', price: '$2.500', img: 'Endurex', value: '3'},
-        {name: 'SCORCHER', price: '$1.000', img: 'scorcher', value: '2'},
-        {name: 'CRUISER', price: '$3.000', img: 'cruiser', value: '4'},
-        {name: 'BMX', price: '$500', img: 'bmx', value: '1'},
-        {name: 'WHIPPET', price: '$2.500', img: 'Whippet', value: '3'},
-        {name: 'TRI-CYCLES', price: '$2.500', img: 'TriCycles', value: '3'}
+        {name: 'ENDUREX', price: 2500, img: 'Endurex'},
+        {name: 'SCORCHER', price: 1000, img: 'scorcher'},
+        {name: 'CRUISER', price: 3000, img: 'cruiser'},
+        {name: 'BMX', price: 500, img: 'bmx'},
+        {name: 'WHIPPET', price: 2500, img: 'Whippet'},
+        {name: 'TRI-CYCLES', price: 2500, img: 'TriCycles'}
     ]
 
 
@@ -21,7 +21,11 @@ $(document).ready(function(){
 
         cardName.text(bike.name)
 
-        cardPrice.text(bike.price)
+        const formartValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 3 })
+
+        let valor = formartValue.format(bike.price)
+
+        cardPrice.text(valor)
 
         cardImd.attr('src', `/img/ImgCard/${bike.img}.png`)
 
@@ -34,6 +38,14 @@ $(document).ready(function(){
 
 $('#button-select').on('click', function(){
     
+    let bikes = [
+        {name: 'BMX', price: 500, img: 'bmx'},
+        {name: 'SCORCHER', price: 1000, img: 'scorcher'},
+        {name: 'WHIPPET', price: 2500, img: 'Whippet'},
+        {name: 'ENDUREX', price: 2500, img: 'Endurex'},
+        {name: 'TRI-CYCLES', price: 2500, img: 'TriCycles'},
+        {name: 'CRUISER', price: 3000, img: 'cruiser'}
+    ]
 
     let option = $(".selec").val()
 
@@ -41,24 +53,8 @@ $('#button-select').on('click', function(){
 
         $(".card-container").empty();
 
-        let bikes1 = [
-            {name: 'BMX', price: '$500', img: 'bmx', value: '1'},
-            {name: 'SCORCHER', price: '$1.000', img: 'scorcher', value: '2'},
-            {name: 'WHIPPET', price: '$2.500', img: 'Whippet', value: '3'},
-            {name: 'ENDUREX', price: '$2.500', img: 'Endurex', value: '3'},
-            {name: 'TRI-CYCLES', price: '$2.500', img: 'TriCycles', value: '3'},
-            {name: 'CRUISER', price: '$3.000', img: 'cruiser', value: '4'}
-        ]
-    
-    
-        let bikeCre =  bikes1.sort(function (a, b) {
-            if (a.value > b.value) {
-              return 1;
-            }
-            if (a.value < b.value) {
-              return -1;
-            }
-            return 0;
+        let bikeCre =  bikes.sort(function (a, b) {
+            return a.price - b.price;
         });
     
         bikeCre.forEach(bike => {
@@ -72,8 +68,12 @@ $('#button-select').on('click', function(){
             let cardImd = template.find('.card-img')
     
             cardName.text(bike.name)
+
+            const formartValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 3 })
+
+            let valor = formartValue.format(bike.price)
     
-            cardPrice.text(bike.price)
+            cardPrice.text(valor)
     
             cardImd.attr('src', `/img/ImgCard/${bike.img}.png`)
     
@@ -87,24 +87,9 @@ $('#button-select').on('click', function(){
     if(option == '2'){
 
         $(".card-container").empty();
-
-        let bikes2 = [
-            {name: 'BMX', price: '$500', img: 'bmx', value: '1'},
-            {name: 'SCORCHER', price: '$1.000', img: 'scorcher', value: '2'},
-            {name: 'WHIPPET', price: '$2.500', img: 'Whippet', value: '3'},
-            {name: 'ENDUREX', price: '$2.500', img: 'Endurex', value: '3'},
-            {name: 'TRI-CYCLES', price: '$2.500', img: 'TriCycles', value: '3'},
-            {name: 'CRUISER', price: '$3.000', img: 'cruiser', value: '4'}
-        ]
     
-        let bikeDec =  bikes2.sort(function (a, b) {
-            if (a.value > b.value) {
-              return -1;
-            }
-            if (a.value < b.value) {
-              return 1;
-            }
-            return 0;
+        let bikeDec =  bikes.sort(function (a, b) {
+            return b.price - a.price;
         });
     
         bikeDec.forEach(bike => {
@@ -118,8 +103,12 @@ $('#button-select').on('click', function(){
             let cardImd = template.find('.card-img')
     
             cardName.text(bike.name)
+
+            const formartValue = new Intl.NumberFormat('pt-BR', { style: 'currency', currency: 'BRL', minimumFractionDigits: 2, maximumFractionDigits: 3 })
+
+            let valor = formartValue.format(bike.price)
     
-            cardPrice.text(bike.price)
+            cardPrice.text(valor)
     
             cardImd.attr('src', `/img/ImgCard/${bike.img}.png`)
     
