@@ -26,8 +26,8 @@
 
     <nav class="container bg-dark px-0">
         <div class="row px-3 d-flex justify-content-between">
-            <div class="col-sm-12 col-md-6 col-lg-4 p-0 d-flex justify-content-center">
-                <h2 class="text-white py-3 m-0 ">
+            <div class="col-sm-12 col-md-6 col-lg-4 p-0 d-flex justify-content-start">
+                <h2 class="text-white ps-2 py-3 m-0 ">
                     Novidades no estoque
                 </h2>
             </div>
@@ -36,14 +36,14 @@
                     <option value="1">Preço crescente</option>
                     <option value="2">Preço decrescente</option>
                 </select>
-                <button id="button-select">
-                    <strong class="px-2">X</strong>
+                <button class="bg-secondary border border-white rounded-pill ms-1" id="button-select">
+                    <i class="fas fa-search px-2"></i>
                 </button>
             </div>
         </div>
     </nav>
 
-    <main class="container border border-white bg-main mb-4">
+    <main class="container border border-white bg-preto mb-4">
         <div class="row pt-4 pb-0 card-container">
 
         </div>
@@ -58,13 +58,14 @@
     <template class="template-card">
         <div class="col-sm-12 col-md-6 col-lg-4 mb-4">
             <div class="card">
-                <div class="card-body d-flex justify-content-end">
+                <div class="card-body d-flex justify-content-end p-0">
                     <div>
-                        <p class="position-relative">
-                            <img src="img/ImgCard/logCard.png" alt="">
+                        <p class="position-relative mb-0">
+                            <i class="fas fa-user-alt p-2"></i>
                             <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-dark">
                                 1
                             </span>
+                        </p>
                     </div>
                 </div>
                 <img src="" class="card-img-top p-2 card-img" id="myImageId" alt="">
